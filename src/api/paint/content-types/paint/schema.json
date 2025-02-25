@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paints",
+  "info": {
+    "singularName": "paint",
+    "pluralName": "paints",
+    "displayName": "paint",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
