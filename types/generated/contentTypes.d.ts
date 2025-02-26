@@ -618,6 +618,40 @@ export interface ApiPaintPaint extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaintcartPaintcart extends Struct.CollectionTypeSchema {
+  collectionName: 'paintcarts';
+  info: {
+    description: '';
+    displayName: 'paintcart';
+    pluralName: 'paintcarts';
+    singularName: 'paintcart';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::paintcart.paintcart'
+    > &
+      Schema.Attribute.Private;
+    paint: Schema.Attribute.Relation<'oneToOne', 'api::paint.paint'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qty: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1167,6 +1201,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::paint.paint': ApiPaintPaint;
+      'api::paintcart.paintcart': ApiPaintcartPaintcart;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

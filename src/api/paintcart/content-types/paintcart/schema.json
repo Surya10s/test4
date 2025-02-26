@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paintcarts",
+  "info": {
+    "singularName": "paintcart",
+    "pluralName": "paintcarts",
+    "displayName": "paintcart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "paint": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::paint.paint"
+    },
+    "qty": {
+      "type": "integer"
+    }
+  }
+}
