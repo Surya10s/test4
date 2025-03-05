@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentAddress extends Struct.ComponentSchema {
+  collectionName: 'components_component_addresses';
+  info: {
+    displayName: 'address';
+  };
+  attributes: {
+    area: Schema.Attribute.String;
+    country: Schema.Attribute.String;
+    phoneno: Schema.Attribute.BigInteger &
+      Schema.Attribute.SetMinMax<
+        {
+          max: '9999999999';
+        },
+        string
+      >;
+    pincode: Schema.Attribute.BigInteger &
+      Schema.Attribute.SetMinMax<
+        {
+          max: '999999';
+        },
+        string
+      >;
+    state: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +91,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'component.address': ComponentAddress;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

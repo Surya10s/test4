@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "orderitems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orderitem.orderitem",
+      "mappedBy": "order"
+    },
+    "delivery_address": {
+      "type": "text"
+    },
+    "order_status": {
+      "type": "string"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "payment_status": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    }
+  }
+}

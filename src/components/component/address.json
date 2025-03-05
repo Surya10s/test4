@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_component_addresses",
+  "info": {
+    "displayName": "address"
+  },
+  "options": {},
+  "attributes": {
+    "country": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "biginteger",
+      "max": "999999"
+    },
+    "phoneno": {
+      "type": "biginteger",
+      "max": "9999999999"
+    }
+  }
+}

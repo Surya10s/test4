@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orderitems",
+  "info": {
+    "singularName": "orderitem",
+    "pluralName": "orderitems",
+    "displayName": "orderitem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "paint": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::paint.paint"
+    },
+    "qty": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "orderitems"
+    }
+  }
+}
