@@ -29,7 +29,7 @@
       "type": "string"
     },
     "stock_qty": {
-      "type": "integer"
+      "type": "biginteger"
     }
   }
 }

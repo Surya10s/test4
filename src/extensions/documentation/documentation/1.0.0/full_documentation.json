@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-03-12T07:03:42.052Z"
+    "x-generation-date": "2025-03-12T11:05:14.687Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13558,7 +13558,9 @@
                                           "type": "string"
                                         },
                                         "stock_qty": {
-                                          "type": "integer"
+                                          "type": "string",
+                                          "pattern": "^\\d*$",
+                                          "example": "123456789"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -17025,7 +17027,9 @@
                       "type": "string"
                     },
                     "stock_qty": {
-                      "type": "integer"
+                      "type": "string",
+                      "pattern": "^\\d*$",
+                      "example": "123456789"
                     },
                     "createdAt": {
                       "type": "string",
@@ -18306,7 +18310,9 @@
                 "type": "string"
               },
               "stock_qty": {
-                "type": "integer"
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               },
               "createdAt": {
                 "type": "string",
@@ -18896,7 +18902,9 @@
                 "type": "string"
               },
               "stock_qty": {
-                "type": "integer"
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               },
               "locale": {
                 "type": "string"
@@ -19576,7 +19584,9 @@
             "type": "string"
           },
           "stock_qty": {
-            "type": "integer"
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
           },
           "createdAt": {
             "type": "string",
@@ -19770,7 +19780,9 @@
                   "type": "string"
                 },
                 "stock_qty": {
-                  "type": "integer"
+                  "type": "string",
+                  "pattern": "^\\d*$",
+                  "example": "123456789"
                 },
                 "createdAt": {
                   "type": "string",
@@ -20777,7 +20789,9 @@
                                 "type": "string"
                               },
                               "stock_qty": {
-                                "type": "integer"
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -22960,7 +22974,9 @@
                                       "type": "string"
                                     },
                                     "stock_qty": {
-                                      "type": "integer"
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -24290,7 +24306,9 @@
                                 "type": "string"
                               },
                               "stock_qty": {
-                                "type": "integer"
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -25418,7 +25436,9 @@
                 "type": "string"
               },
               "stock_qty": {
-                "type": "integer"
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               },
               "createdAt": {
                 "type": "string",

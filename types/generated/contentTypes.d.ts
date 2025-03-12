@@ -681,7 +681,7 @@ export interface ApiPaintPaint extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
-    stock_qty: Schema.Attribute.Integer;
+    stock_qty: Schema.Attribute.BigInteger;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
