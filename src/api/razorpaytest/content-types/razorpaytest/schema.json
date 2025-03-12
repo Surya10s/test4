@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "razorpaytests",
+  "info": {
+    "singularName": "razorpaytest",
+    "pluralName": "razorpaytests",
+    "displayName": "razorpaytest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "paymentId": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "payment_status": {
+      "type": "boolean"
+    }
+  }
+}

@@ -34,6 +34,9 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
+    },
+    "payment_id": {
+      "type": "string"
     }
   }
 }

@@ -614,6 +614,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::orderitem.orderitem'
     >;
+    payment_id: Schema.Attribute.String;
     payment_status: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     total_amount: Schema.Attribute.Decimal;
@@ -680,6 +681,7 @@ export interface ApiPaintPaint extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
+    stock_qty: Schema.Attribute.Integer;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -779,6 +781,43 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRazorpaytestRazorpaytest
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'razorpaytests';
+  info: {
+    description: '';
+    displayName: 'razorpaytest';
+    pluralName: 'razorpaytests';
+    singularName: 'razorpaytest';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    amount: Schema.Attribute.BigInteger;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::razorpaytest.razorpaytest'
+    > &
+      Schema.Attribute.Private;
+    orderId: Schema.Attribute.String;
+    payment_status: Schema.Attribute.Boolean;
+    paymentId: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -1340,6 +1379,7 @@ declare module '@strapi/strapi' {
       'api::paintcart.paintcart': ApiPaintcartPaintcart;
       'api::payment.payment': ApiPaymentPayment;
       'api::product.product': ApiProductProduct;
+      'api::razorpaytest.razorpaytest': ApiRazorpaytestRazorpaytest;
       'api::review.review': ApiReviewReview;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

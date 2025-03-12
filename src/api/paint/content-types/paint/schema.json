@@ -27,6 +27,9 @@
     },
     "type": {
       "type": "string"
+    },
+    "stock_qty": {
+      "type": "integer"
     }
   }
 }
